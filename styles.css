@@ -120,10 +120,24 @@ p {
   font-family: "Playfair Display", serif;
   color: #6b7280;
   font-weight: 300;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.5px;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+.logo-link:hover h2 {
+  color: #4b5563;
 }
 
 .nav-menu {
@@ -154,10 +168,41 @@ p {
   transform: scale(1.1);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
+}
+
+.whatsapp-mobile {
+  display: none;
+  width: 34px;
+  height: 34px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-mobile:hover {
+  background: #128c7e;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-mobile i {
+  font-size: 1rem;
 }
 
 .bar {
@@ -789,6 +834,14 @@ p {
 
   .nav-toggle {
     display: flex;
+  }
+
+  .whatsapp-mobile {
+    display: flex;
+  }
+
+  .nav-link .whatsapp-icon {
+    display: none;
   }
 
   .nav-toggle.active .bar:nth-child(2) {

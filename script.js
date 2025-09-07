@@ -8,7 +8,7 @@ navToggle.addEventListener("click", () => {
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-link").forEach((link) => {
+document.querySelectorAll(".nav-link, .logo-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     // Check if the clicked element is the WhatsApp icon
     if (e.target.classList.contains("whatsapp-icon")) {
