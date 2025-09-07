@@ -117,9 +117,13 @@ p {
 }
 
 .nav-logo h2 {
-  color: #667eea;
-  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #6b7280;
+  font-weight: 300;
+  font-size: 2.2rem;
   margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
 }
 
 .nav-menu {
@@ -129,13 +133,25 @@ p {
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: #6b7280;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #667eea;
+  color: #4b5563;
+}
+
+.nav-link .whatsapp-icon {
+  color: #25d366;
+  margin-left: 5px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover .whatsapp-icon {
+  color: #128c7e;
+  transform: scale(1.1);
 }
 
 .nav-toggle {
@@ -220,7 +236,7 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .floating-card i {
@@ -234,30 +250,36 @@ p {
 }
 
 .card-1 {
-  top: 20%;
-  left: 10%;
+  top: 15%;
+  left: 5%;
   animation-delay: 0s;
 }
 
 .card-2 {
-  top: 50%;
-  right: 20%;
-  animation-delay: 2s;
+  top: 35%;
+  right: 5%;
+  animation-delay: 1.5s;
 }
 
 .card-3 {
-  bottom: 20%;
-  left: 30%;
-  animation-delay: 4s;
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 3s;
 }
 
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(1deg);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-25px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-1deg);
   }
 }
 
@@ -643,8 +665,8 @@ p {
 
 /* Footer */
 .footer {
-  background: #2d3748;
-  color: white;
+  background: #f8fafc;
+  color: #374151;
   padding: 3rem 0 1rem;
 }
 
@@ -657,13 +679,19 @@ p {
 
 .footer-section h3,
 .footer-section h4 {
-  color: white;
+  font-family: "Playfair Display", serif;
+  color: #1f2937;
   margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
 .footer-section p {
-  color: #a0aec0;
+  font-family: "Playfair Display", serif;
+  color: #6b7280;
   margin-bottom: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 .footer-section ul {
@@ -675,9 +703,12 @@ p {
 }
 
 .footer-section ul li a {
-  color: #a0aec0;
+  font-family: "Playfair Display", serif;
+  color: #6b7280;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 .footer-section ul li a:hover {
@@ -685,7 +716,7 @@ p {
 }
 
 .footer-bottom {
-  border-top: 1px solid #4a5568;
+  border-top: 1px solid #e5e7eb;
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
@@ -695,8 +726,11 @@ p {
 }
 
 .footer-bottom p {
-  color: #a0aec0;
+  font-family: "Playfair Display", serif;
+  color: #6b7280;
   margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 .footer-links {
@@ -705,13 +739,33 @@ p {
 }
 
 .footer-links a {
-  color: #a0aec0;
+  font-family: "Playfair Display", serif;
+  color: #6b7280;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 .footer-links a:hover {
   color: #667eea;
+}
+
+/* Phone Links */
+.phone-link {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.phone-link:hover {
+  color: #25d366;
+  text-decoration: underline;
+  text-decoration-color: #25d366;
+  text-underline-offset: 3px;
 }
 
 /* Responsive Design */
@@ -788,6 +842,22 @@ p {
 
   .methodology-timeline {
     grid-template-columns: 1fr;
+  }
+
+  /* Floating cards mobile adjustments */
+  .card-1 {
+    top: 10%;
+    left: 2%;
+  }
+
+  .card-2 {
+    top: 30%;
+    right: 2%;
+  }
+
+  .card-3 {
+    bottom: 10%;
+    left: 15%;
   }
 }
 

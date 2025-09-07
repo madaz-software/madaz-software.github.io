@@ -9,7 +9,19 @@ navToggle.addEventListener("click", () => {
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (e) => {
+    // Check if the clicked element is the WhatsApp icon
+    if (e.target.classList.contains("whatsapp-icon")) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Redirect to WhatsApp
+      const whatsappUrl =
+        "https://wa.me/5531984722959?text=Olá,%20vim%20pelo%20site!";
+      window.open(whatsappUrl, "_blank");
+      return;
+    }
+
     navMenu.classList.remove("active");
     navToggle.classList.remove("active");
   });
@@ -92,20 +104,38 @@ if (contactForm) {
       return;
     }
 
-    // Simulate form submission
+    // Format message for WhatsApp
+    let whatsappMessage = `Olá! Vim pelo site da Madaz e gostaria de entrar em contato.\n\n`;
+    whatsappMessage += `📋 *Dados do Contato:*\n`;
+    whatsappMessage += `👤 Nome: ${name}\n`;
+    whatsappMessage += `📧 E-mail: ${email}\n`;
+    if (company) {
+      whatsappMessage += `🏢 Empresa: ${company}\n`;
+    }
+    whatsappMessage += `\n💬 *Mensagem:*\n${message}`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // WhatsApp URL with your number
+    const whatsappUrl = `https://wa.me/5531984722959?text=${encodedMessage}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
+
+    // Show success message
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
 
-    submitBtn.textContent = "Enviando...";
+    submitBtn.textContent = "Redirecionando...";
     submitBtn.disabled = true;
 
-    // Simulate API call
+    // Reset form after a short delay
     setTimeout(() => {
-      alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
       this.reset();
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-    }, 2000);
+    }, 1500);
   });
 }
 
